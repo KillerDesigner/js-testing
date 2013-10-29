@@ -1,0 +1,27 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="jquery.js"></script>
+  <script src="sinon.js"></script>
+  <script src="chai.js"></script>
+  <script src="mocha.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="axiom.js"></script>
+  <script>
+    // Enable `.should`-style matchers (like RSpec)
+    chai.should()
+
+    // Set up mocha
+    mocha.checkLeaks();
+    mocha.globals(['jQuery']);
+
+    // Run our tests
+    mocha.run();
+  </script>
+</body>
+</html>
